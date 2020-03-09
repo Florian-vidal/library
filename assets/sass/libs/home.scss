@@ -1,0 +1,138 @@
+.jumbotron{
+    position: relative;
+    z-index: 0;
+    background: url('https://i.pinimg.com/originals/ac/30/b8/ac30b875bfce1ff687694c85373082df.jpg');
+    background-size: cover;
+    h1{
+        color: white;
+        text-align: start;
+        margin-bottom: 1em;
+    }
+    p{
+        color: white;
+        margin-bottom: 2em;
+    }
+    .btn{
+        background: #333940;
+        &:hover{
+            background: black;
+        }
+    }
+}
+
+.triangle-blanc1{
+    z-index: 1;
+    width: 0; 
+    height: 0; 
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;  
+    border-bottom: 150px solid white;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.h1-les-nouveaux-bouquins{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    .img-les-nouveaux-bouquins{
+        width: 150px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.h1-les-nouveaux-auteurs{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    .img-les-nouveaux-auteurs{
+        width: 150px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.les-nouveaux-bouquins{
+    z-index: -2;
+    position: relative;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background: url('./image/background-les-nouveaux-bouquins.jpg');
+    .background-black{
+        z-index: -1;
+        opacity: 0.5;
+        background: url('./image/background-black.jpg');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.les-nouveaux-auteurs{
+    z-index: -2;
+    position: relative;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background: url('./image/background-les-nouveaux-auteurs.jpg');
+    .background-black{
+        z-index: -1;
+        opacity: 0.3;
+        background: url('./image/background-black.jpg');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+h1{
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.citation{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4em;
+    background: #eee;
+    padding: 15px;
+    border-radius: 5px;
+    h1{
+        margin: 1em;
+        text-align: center;
+    }
+    blockquote {  
+        display: flex;
+        align-items: flex-start;
+        p{
+            font-size: 1.3em;
+            padding: 1em;
+            width: 80%;
+        }
+        .quote{
+            width: 20%;
+            
+            .imgQuote{
+                padding: 1em;
+                width: 80%;
+                img{
+                    width: 100%;
+                }
+            }
+            footer{
+                font-size: .7em;
+            }
+        }
+    }
+}
+

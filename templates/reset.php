@@ -35,17 +35,18 @@
 
 ?>
 
-
 <div class="formInsert">
-<form action="" method="POST">
-    <div class="form-group">
-        <label for="password">Votre nouveau mot de passe</label>
-        <input type="text" name="password" class="form-control" id="password" />
-    </div>
-    <div class="form-group">
-        <label for="password_confirm">Confirmation de mot de passe</label>
-        <input type="text" name="password_confirm" class="form-control" id="password_confirm" />
-    </div>
-    <input type="submit" class="btn btn-primary" value="Réinitialiser le mot de passe"></button>
-</form>
+    <form action="" method="POST">
+        <div class="form-group">
+            <label for="password">Votre nouveau mot de passe</label>
+            <input type="text" name="password" class="form-control" id="password" required//>
+        </div>
+        <div class="form-group">
+            <label for="password_confirm">Confirmation de mot de passe</label>
+            <input type="text" name="password_confirm" class="form-control" id="password_confirm" required//>
+        </div>
+        <input type="submit" class="btn btn-info offset-lg-5" value="Réinitialiser le mot de passe"></button>
+    </form>
 </div>
+
+<?php require_once ('../inc/footer.php'); ?>

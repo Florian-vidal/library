@@ -16,12 +16,27 @@
         }
 
         // Affichage d'un auteur individuel
+        // public function showAuthor($authorId)
+        // {
+        //     $database = $this->getDatabase();
+        //     $request = $database->query('SELECT * FROM author WHERE id=' .$authorId);
+        //     $result = $request->fetch();
+        //     return $result;
+        // }
+
         public function showAuthor($authorId)
         {
             $database = $this->getDatabase();
-            $request = $database->query('SELECT * FROM author WHERE id=' .$authorId);
-            $result = $request->fetch();
-            return $result;
+            $requestAuthor = $database->query('SELECT * FROM author WHERE id ='.$authorId.'');
+            $requestBooks = $database->query('SELECT book.title FROM book as book INNER JOIN bookAuthor as bookAuthor 
+            ON book.id = bookAuthor.bookID WHERE bookAuthor.authorID =' .$authorId );
+            $currentAuthor = $requestAuthor->fetch();
+            $currentBooks = $requestBooks->fetchAll();
+
+            return $arrayResults = [
+                'currentBooks' => $currentBooks,
+                'currentAuthor' => $currentAuthor
+            ];
         }
 
         // Insertion d'un auteur (nom, image, titre d'un livre associé, image d'un livre associé)

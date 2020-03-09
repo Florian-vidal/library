@@ -12,7 +12,31 @@
         } else {
             $_SESSION['flash']['danger'] = "Veuillez vous connecter pour ajouter un livre au panier";                        
             header('Location: ../templates/login.php');
-        }
-        
+        }        
     }
+
+    if(isset($_POST['quantity'])){
+        if($_SESSION['auth']){
+            $quantity = $_POST['quantity'];
+            $panierItemId = $_POST['panierItemId'];
+            $newPanier -> updatePanier($quantity, $panierItemId);
+        } else {
+            $_SESSION['flash']['danger'] = "Veuillez vous connecter pour ajouter un livre au panier";                        
+            header('Location: ../templates/login.php');
+        }        
+    }
+
+    if(isset($_POST['deleteItemPanier'])){
+        if($_SESSION['auth']){
+            $deleteItemPanier = $_POST['deleteItemPanier'];
+            $newPanier -> deleteItemPanier($deleteItemPanier);
+        } else {
+            $_SESSION['flash']['danger'] = "Veuillez vous connecter pour ajouter un livre au panier";                        
+            header('Location: ../templates/login.php');
+        }        
+    }
+
+    
+
+
 ?>

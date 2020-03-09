@@ -1,0 +1,58 @@
+
+
+
+/* Page Les livres */
+.container{
+    display: flex;
+    flex-wrap:
+    wrap;
+    justify-content: center;
+}
+
+
+
+
+
+.imgBook img{
+    width: 100%;
+}
+
+.btn-commande{
+    text-align: center;
+}
+
+
+/* Fin Page Les livres */
+.card-book-show {  
+    margin: 2em auto;
+    width: 330px;
+    box-shadow: 0 0 5px 0 rgba(196,196,196,1);
+}
+/* Page des livres showBook */
+
+
+
+
+/* Fin Page des livres showBook */
+
+/* Le Crud */
+/* Formulaire ajout Book */
+
+.insert-book-author{
+    text-align: center;
+}
+
+.insert-book-author > a{
+    margin: 1em;
+}
+
+
+
+.formTitleH1{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.btn-primary{
+    margin-top: 2em;
+}

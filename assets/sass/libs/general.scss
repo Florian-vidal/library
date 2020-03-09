@@ -1,0 +1,51 @@
+// Colors
+
+// Fonts
+$title : 'Cinzel Decorative', cursive;
+
+h1{
+    font-family: $title;
+    font-weight: bold;
+}
+
+// Formulaires
+.formInsert{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3em;
+    label{
+        font-size: large;
+        margin-top: 1em;
+    }
+}
+
+// Les cartes (présentation des livres et auteurs)
+.card-book, .card-book-les-nouveaux-bouquins, .card-book-les-nouveaux-auteurs{
+    margin: 1.5em;
+    width: 175px;
+    box-shadow: 0 0 5px 0 rgba(196,196,196,1);
+    &:hover{
+        box-shadow: 0 0 5px 2px rgba(196,196,196,1);
+    }
+}
+
+.card-book-les-nouveaux-bouquins, .card-book-les-nouveaux-auteurs{
+    background: white;
+}
+
+
+
+// CRUD 
+.imgBookCrud{
+    width: 100px;
+    margin-bottom: 1.5em;
+
+    img{
+        width: 100%;
+    }
+}
+
+.table th, .table td{
+    vertical-align: baseline;
+}

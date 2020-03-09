@@ -1,5 +1,4 @@
 <?php
-
     require_once ('database.php');
     include ('../inc/functions.php');
 
@@ -15,15 +14,34 @@
 
             // Nous génère le dernier Id entré
             $user_id = $database->lastInsertId();
-            mail($email, 'Confirmation de votre compte', "Afin de valider votre compte merci de cliquer sur ce lien\n\n
-            http://127.0.0.1:8080/library/templates/confirm.php?id=$user_id&token=$token");
+            var_dump($user_id);
+            var_dump($email);
+            print phpinfo();  
+            mail($email, 'Confirmation de votre compte', "Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://127.0.0.1:8080/library/templates/confirm.php?id=$user_id&token=$token");
 
             // On lance une session qui enregistre des messages dans $_SESSION
             session_start();
-            $_SESSION['flash']['success'] = 'Un email de confirmation vous a été envoyé pour valider votre compte';
-            header('Location: login.php');
+            $_SESSION['flash']['success'] = 'Un email de confirmation vous a été envoyé pour valider votre compte, veuillez vérifier vos spams.';
+            // header('Location: login.php');
             exit();
+        }
 
+        public function verifyRole(){
+            session_start();
+            if($_SESSION['auth']){
+                $database = $this->getDatabase();
+                $request = $database->prepare('SELECT role FROM profil WHERE id = ?');
+                $request->execute([$_SESSION['auth']['profilID']]);
+                $userProfil = $request->fetch();
+                if($userProfil['role'] != 'admin' ){
+                    $_SESSION['flash']['danger'] = "Vous devez être administrateur pour acéder à cette page.";                        
+                    header('Location: index.php');
+                }
+            } else {
+                $_SESSION['flash']['danger'] = "Vous devez être connecté pour acéder à cette page.";                        
+                header('Location: login.php');
+            }
+            
         }
 
         public function matchUserName($username){
@@ -66,7 +84,9 @@
                 $_SESSION['flash']['danger'] = "Ce token n'est plus valide";                        
                 header('Location: login.php');
             }
-        }   
+        }  
+        
+        
     }
 
 ?>

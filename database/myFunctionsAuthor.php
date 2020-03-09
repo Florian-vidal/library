@@ -39,7 +39,7 @@
 ?>
 
 <p>
-    <a href="../templates/crud.html.php" title="Retour à l'accueil">Retour à l'accueil</a>
+    <a href="../templates/crud.html.php" title="Retour à l'accueil">Retour à l'espace Admin</a>
 </p>
 
 

@@ -13,14 +13,15 @@
     }
 
     // Modification d'un livre
-    if (isset($_POST['updateTitleBook']) && isset($_POST['updateImageBook'])){
-        if (empty($_POST['updateTitleBook']) && empty($_POST['updateImageBook'])){
+    if (isset($_POST['updateTitleBook']) && isset($_POST['updateImageBook']) && isset($_POST['updatePriceBook'])){
+        if (empty($_POST['updateTitleBook']) && empty($_POST['updateImageBook']) && isset($_POST['updatePriceBook'])){
             echo "Veuillez renseigner les champs Titre et Image";            
         }else{
             $updateTitleBook = $_POST['updateTitleBook'];
             $updateImageBook = $_POST['updateImageBook'];
+            $updatePriceBook = $_POST['updatePriceBook'];
             $bookId = (int)$_POST['idBook'];
-            $newBook->updateBook($updateTitleBook, $updateImageBook, $bookId);
+            $newBook->updateBook($updateTitleBook, $updateImageBook, $updatePriceBook, $bookId);
         }
     }
 
@@ -44,7 +45,7 @@
 ?>
 
 <p>
-    <a href="../templates/crud.html.php" title="Retour à l'accueil">Retour à l'accueil</a>
+    <a href="../templates/crud.html.php" title="Retour à l'accueil">Retour à l'espace Admin</a>
 </p>
 
 

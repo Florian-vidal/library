@@ -1,11 +1,9 @@
 <?php
-
     require_once ('../inc/header.php');
     require_once ('../database/user.php');
     require_once ('../database/database.php');
     $newDatabase = new Database;
     $database = $newDatabase->getDatabase();
-
 ?>
 
 <?php 
@@ -37,12 +35,10 @@
         <div class="form-group">
             <p>Pour réinitialiser votre mot de passe, veuillez indiquer votre mail.</p>
             <label for="email">Email</label>
-            <input type="text" name="email" class="form-control" id="email" />
+            <input type="text" name="email" class="form-control" id="email" required//>
         </div>
-        <input type="submit" class="btn btn-info" value="Envoi"></button>
+        <input type="submit" class="btn btn-info offset-lg-5" value="Envoi"></button>
     </form>
 </div>
 
-<?php
-    require_once ('../inc/footer.php');
-?>
+<?php require_once ('../inc/footer.php'); ?>

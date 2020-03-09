@@ -1,5 +1,4 @@
 <?php
-
     require_once ('../inc/header.php');
     require_once ('../database/user.php');
     require_once ('../database/database.php');
@@ -7,7 +6,6 @@
     $newDatabase = new Database;
     $database = $newDatabase->getDatabase();
     reconnect_from_cookie();
-
 ?>
 
 <?php 
@@ -40,8 +38,6 @@
 
 <h1>Se connecter</h1>
 
-
-
 <div class="formInsert">
     <form action="" method="POST">
         <div class="form-group">
@@ -58,10 +54,8 @@
             </label>
         </div>
 
-        <button type="submit" class="btn btn-primary">Se connecter</button>
+        <button type="submit" class="btn btn-info offset-lg-5">Se connecter</button>
     </form>
 </div>
 
-<?php
-    require_once ('../inc/footer.php');
-?>
+<?php require_once ('../inc/footer.php'); ?>

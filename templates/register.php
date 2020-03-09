@@ -1,14 +1,9 @@
 <?php 
-
     require_once ('../inc/header.php');
-
-    // La fonction debug, qui se trouve dans le fichier functions.php, utilisée sur cette page ligne 51 est inclue dans la classe user appelée ici dans la ligne 11, par héritage, nous n'avons pas à re inclure le fichier functions sur cette page
-    // include ('../inc/functions.php');
     require_once ('../database/user.php');
 
     $newUser = new User;
 
-    
     if(!empty($_POST)){
 
         // On créé un tableau qui se remplie d'erreurs si certains champs sont mal renseignés
@@ -87,10 +82,8 @@
             <label for="password_confirm">Confirmez votre mot de passe</label>
             <input type="text" name="password_confirm" class="form-control" id="password_confirm" required/>
         </div>
-        <input type="submit" class="btn btn-primary" value="M'inscrire"></button>
+        <input type="submit" class="btn btn-info offset-lg-5" value="S'inscrire"></button>
     </form>
 </div>
 
-<?php
-    require_once ('../inc/footer.php');
-?>
+<?php require_once ('../inc/footer.php'); ?>

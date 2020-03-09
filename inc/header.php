@@ -1,100 +1,74 @@
-<?php 
-
-    // Si le statut de la session n'exite pas, alors session_start se lance
+<?php
+    // Si le statut de la session n'existe pas, alors session_start se lance
     if(session_status() == PHP_SESSION_NONE){
         session_start();
-    }
-    
+    } 
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
     <title>Le cercle des Poètes</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="../assets/css/app.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-oOs/gFavzADqv3i5nCM+9CzXe3e5vXLXZ5LZ7PplpsWpTCufB7kqkTlC9FtZ5nJo" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Le cercle des Poètes</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="book.html.php">Les livres</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="author.html.php">Les auteurs</a>
-                </li>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.php">Accueil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="book.html.php">Les livres</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="author.html.php">Les auteurs</a>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon compte</a>
+                <div class="dropdown-menu">
                 <?php 
-                    if(isset($_SESSION['auth'])){
-                ?>      
-                        <li class="nav-item">
-                            <a class="nav-link" href="account.php">Mon compte</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="panier.html.php">Mon panier</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Se déconnecter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="crud.html.php">Espace Admin</a>
-                        </li>   
-
-                        <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown link
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>  
-                           
-                <?php
-                    }else{
+                    if (isset($_SESSION['auth'])) {
                 ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.php">S'inscrire</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Se connecter</a>
-                        </li>
+                        <a class="dropdown-item" href="account.php">Mon compte</a>
+                        <a class="dropdown-item" href="panier.html.php">Mon panier</a>
+                        <a class="dropdown-item" href="logout.php">Se déconnecter</a>
+                        <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="crud.html.php">Espace Admin</a>
                 <?php
-                    }            
+                    } else { 
                 ?>
-            </ul>
+                            <a class="dropdown-item" href="register.php">S'inscrire</a>
+                            <a class="dropdown-item" href="login.php">Se connecter</a>
+                        </div> 
+                <?php
+                    }
+                ?>
+                </div>
+            </li>
+        </ul>
+        <form action="searchResults.html.php" method="GET" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Rechercher" name="newSearch">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Ok</button>
+        </form>
         </div>
     </nav>
 
     <main role="main">
-
     <?php if(isset($_SESSION['flash'])) :?>
         <?php foreach($_SESSION['flash'] as $type => $message): ?>
             <div class="alert alert-<?= $type ?>">
                 <?= $message; ?>
             </div>
         <?php endforeach; ?>
-
         <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
 

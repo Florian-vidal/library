@@ -1,0 +1,232 @@
+.jumbotron {
+  position: relative;
+  z-index: 0;
+  background: url("https://i.pinimg.com/originals/ac/30/b8/ac30b875bfce1ff687694c85373082df.jpg");
+  background-size: cover;
+}
+.jumbotron h1 {
+  color: white;
+  text-align: start;
+  margin-bottom: 1em;
+}
+.jumbotron p {
+  color: white;
+  margin-bottom: 2em;
+}
+.jumbotron .btn {
+  background: #333940;
+}
+.jumbotron .btn:hover {
+  background: black;
+}
+
+.triangle-blanc1 {
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid white;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.h1-les-nouveaux-bouquins {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.h1-les-nouveaux-bouquins .img-les-nouveaux-bouquins {
+  width: 150px;
+}
+.h1-les-nouveaux-bouquins .img-les-nouveaux-bouquins img {
+  width: 100%;
+}
+
+.h1-les-nouveaux-auteurs {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.h1-les-nouveaux-auteurs .img-les-nouveaux-auteurs {
+  width: 150px;
+}
+.h1-les-nouveaux-auteurs .img-les-nouveaux-auteurs img {
+  width: 100%;
+}
+
+.les-nouveaux-bouquins {
+  z-index: -2;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: url("./image/background-les-nouveaux-bouquins.jpg");
+}
+.les-nouveaux-bouquins .background-black {
+  z-index: -1;
+  opacity: 0.5;
+  background: url("./image/background-black.jpg");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.les-nouveaux-auteurs {
+  z-index: -2;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: url("./image/background-les-nouveaux-auteurs.jpg");
+}
+.les-nouveaux-auteurs .background-black {
+  z-index: -1;
+  opacity: 0.3;
+  background: url("./image/background-black.jpg");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.citation {
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 4em;
+  background: #eee;
+  padding: 15px;
+  border-radius: 5px;
+}
+.citation h1 {
+  margin: 1em;
+  text-align: center;
+}
+.citation blockquote {
+  display: flex;
+  align-items: flex-start;
+}
+.citation blockquote p {
+  font-size: 1.3em;
+  padding: 1em;
+  width: 80%;
+}
+.citation blockquote .quote {
+  width: 20%;
+}
+.citation blockquote .quote .imgQuote {
+  padding: 1em;
+  width: 80%;
+}
+.citation blockquote .quote .imgQuote img {
+  width: 100%;
+}
+.citation blockquote .quote footer {
+  font-size: 0.7em;
+}
+
+/* Page Les livres */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imgBook img {
+  width: 100%;
+}
+
+.btn-commande {
+  text-align: center;
+}
+
+/* Fin Page Les livres */
+.card-book-show {
+  margin: 2em auto;
+  width: 330px;
+  box-shadow: 0 0 5px 0 #c4c4c4;
+}
+
+/* Page des livres showBook */
+/* Fin Page des livres showBook */
+/* Le Crud */
+/* Formulaire ajout Book */
+.insert-book-author {
+  text-align: center;
+}
+
+.insert-book-author > a {
+  margin: 1em;
+}
+
+.formTitleH1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.btn-primary {
+  margin-top: 2em;
+}
+
+h1 {
+  font-family: "Cinzel Decorative", cursive;
+  font-weight: bold;
+}
+
+.formInsert {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3em;
+}
+.formInsert label {
+  font-size: large;
+  margin-top: 1em;
+}
+
+.card-book, .card-book-les-nouveaux-bouquins, .card-book-les-nouveaux-auteurs {
+  margin: 1.5em;
+  width: 175px;
+  box-shadow: 0 0 5px 0 #c4c4c4;
+}
+.card-book:hover, .card-book-les-nouveaux-bouquins:hover, .card-book-les-nouveaux-auteurs:hover {
+  box-shadow: 0 0 5px 2px #c4c4c4;
+}
+
+.card-book-les-nouveaux-bouquins, .card-book-les-nouveaux-auteurs {
+  background: white;
+}
+
+.imgBookCrud {
+  width: 100px;
+  margin-bottom: 1.5em;
+}
+.imgBookCrud img {
+  width: 100%;
+}
+
+.table th, .table td {
+  vertical-align: baseline;
+}
+
+.page-footer {
+  background: #333940;
+}
+.page-footer h5 {
+  color: #999999;
+}
+.page-footer p, .page-footer a {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

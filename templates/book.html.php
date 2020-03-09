@@ -1,6 +1,4 @@
 <?php
-
-    // On appelle les fichiers qui contiennent le header et les function définies dans la class Book
     require_once ('../inc/header.php');
     require_once ('../database/book.php');
 
@@ -9,6 +7,7 @@
 
     // On appelle la méthode indexBook pour sélectionner tous les livres
     $books = $book -> indexBook();
+
 ?>
 
 <h1>Les Livres</h1>
@@ -26,9 +25,8 @@
                 <?php echo '<a href="showBook.html.php?id='.$book['id'].'"><img src="'.$book["image"].'"></a>' ?>
             </div>
             <div class="card-body">                
-                <h5 class="card-title"><?php echo $book['title'] ?></h5>
-                <p>Auteur : </p>
-                <p>Prix : </p>
+                <h5 class="card-title"><?php echo $book['title'] ?></h5>               
+                <p>Prix : <?php echo $book['price'] ?>€</p>
                 <div class="btn-commande">
                     <?php echo '<a href="showBook.html.php?id='.$book['id'].'" class="btn btn-info">Voir plus</a>' ?>
                 </div>
@@ -41,6 +39,4 @@
     </div>
 </section>
  
-<?php
-    require_once ('../inc/footer.php');
-?>
+<?php require_once ('../inc/footer.php'); ?>

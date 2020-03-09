@@ -10,7 +10,6 @@
             $database = $this->getDatabase();
             $request = $database->query('SELECT * FROM book');
             $results = $request->fetchAll();
-
             return $results;
         }
 
@@ -47,15 +46,15 @@
             }
         }
 
-        public function updateBook($updateTitleBook, $updateImageBook, $bookId){
+        public function updateBook($updateTitleBook, $updateImageBook, $updatePriceBook, $bookId){
 
             $database = $this->getDatabase();
-            $request = 'UPDATE book SET title = "'.$updateTitleBook.'", image = "' .$updateImageBook. '" WHERE id ='.$bookId.'';
+            $request = 'UPDATE book SET title = "'.$updateTitleBook.'", image = "' .$updateImageBook. '", price = "' .$updatePriceBook. '" WHERE id ='.$bookId.'';
             $database ->exec($request);
             if($request == true){
                 $message = 'Le livre ' .$updateTitleBook. ' a bien été modifé dans la base de données.';
             }else{
-                $message = "Erreur : un problème est survenu lors de l'enregistrement de l'auteur en base de données.";
+                $message = "Erreur : un problème est survenu lors de l'enregistrement du livre en base de données.";
             }
             echo $message;
         }
@@ -91,7 +90,6 @@
 
         public function authorBook($nameAuthorBook, $imageAuthorBook, $authorBookId){
             $database = $this->getDatabase();
-
             $request = $database->query('SELECT * FROM author WHERE name="' .$nameAuthorBook.'"');
             $result = $request->fetch();
             if($result==false){
@@ -119,6 +117,8 @@
                 echo $message;
             }
         }
+
+        
     }
 
 ?>
